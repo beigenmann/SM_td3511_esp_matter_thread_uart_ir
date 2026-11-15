@@ -1,0 +1,28 @@
+menu "SM_td3511 IR UART reader"
+    config SM_TD3511_UART_PORT
+        int "UART port number"
+        range 0 1
+        default 1
+    config SM_TD3511_UART_RX_GPIO
+        int "UART RX GPIO (ESP32-C6 GPIO number)"
+        range 0 30
+        default 4
+    config SM_TD3511_UART_TX_GPIO
+        int "UART TX GPIO (set to -1 if not connected)"
+        range -1 30
+        default -1
+    config SM_TD3511_UART_BAUD
+        int "UART baud rate"
+        range 300 115200
+        default 9600
+    config SM_TD3511_UART_EVEN_PARITY
+        bool "Use even parity"
+        default n
+    config SM_TD3511_UART_TWO_STOP_BITS
+        bool "Use two stop bits"
+        default n
+    config SM_TD3511_SAMPLE_PERIOD_MS
+        int "Read/update period (ms)"
+        range 100 10000
+        default 1000
+endmenu
